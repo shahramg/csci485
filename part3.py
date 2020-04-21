@@ -22,13 +22,13 @@ app = Flask(__name__)
 def hello_world():
         return 'Hello from Google cloud Flask!'
 
-@app.route('/displayuser')
+@app.route('/displayuser', methods=['GET', 'POST'])
 def displayuser():
     tgtUser = request.values.get("patients", None)
     print("Display ", tgtUser)
     return "1"
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     userName = request.values.get("uname", None)
     userPasswd = request.values.get("passwd", None)
@@ -39,14 +39,14 @@ def login():
     return render_template('radio.html', title='CSCI 485 Demonstration', members=users)
 
 
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
     #name = 'Shahram'
     #return render_template('index.html', title='Welcome', username=name)
     return render_template('login.html')
 
-@app.route("/", methods=['GET', 'POST'])
-def server():
+@app.route("/twilio", methods=['GET', 'POST'])
+def twilioserver():
     # get SMS metadata
     msg_from = request.values.get("From", None)
     msg = request.values.get("Body", None)
