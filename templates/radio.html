@@ -1,0 +1,18 @@
+<html>
+    <head>
+       <title>{{ title }}</title>
+    </head>
+    <body>
+	    <h2>{{ title }}</h2>
+
+            <form action="/displayuser">
+
+                   {% for member in members: %}
+	           <input type="radio" name="patients" value="{{ member.name }}" /> {{ member.name }} <br>
+    	           {% endfor %}
+	 
+                 <input type="submit" value="Display User">
+            </form> 
+
+    </body>
+</html>
