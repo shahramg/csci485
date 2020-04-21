@@ -1,2 +1,2 @@
 # csci485
-Sample code for CSCI 485 students
+This repository contains sample code for CSCI 485 students working on the intelligent chatbot project.
